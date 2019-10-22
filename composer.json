@@ -1,5 +1,5 @@
 {
-    "name": "fuqu-io/laravel-package",
+    "name": "fuqu-io/laravel-glide",
     "description": "Laravel package boilerplate.",
     "keywords": [
         "laravel",
@@ -16,7 +16,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "FuquIo\\LaravelPackage\\": "src/"
+            "FuquIo\\LaravelGlide\\": "src/"
         }
     },
     "autoload-dev": {
@@ -33,7 +33,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "FuquIo\\LaravelPackage\\ServiceProvider"
+                "FuquIo\\LaravelGlide\\ServiceProvider"
             ]
         }
     }

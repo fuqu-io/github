@@ -1,6 +1,6 @@
 <?php
 
-namespace FuquIo\LaravelPackage;
+namespace FuquIo\LaravelGlide;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
@@ -9,8 +9,8 @@ use Illuminate\Support\ServiceProvider as BaseServiceProvider;
  * @package FuquIo\LaravelCors
  */
 class ServiceProvider extends BaseServiceProvider{
-	CONST VENDOR_PATH = 'fuqu-io/laravel-package';
-	CONST SHORT_NAME = 'fuqu-package';
+	CONST VENDOR_PATH = 'fuqu-io/laravel-glide';
+	CONST SHORT_NAME = 'fuqu-glide';
 
 	/**
 	 * Bootstrap the application services.
@@ -21,7 +21,6 @@ class ServiceProvider extends BaseServiceProvider{
 
 		$this->bootConfig();
 		$this->bootMigrations();
-		//$this->bootMiddleware();
 
 	}
 

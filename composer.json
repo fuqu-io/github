@@ -1,40 +1,40 @@
 {
-    "name": "fuqu-io/laravel-package",
-    "description": "Laravel package boilerplate.",
-    "keywords": [
-        "laravel",
-        "package"
-    ],
-    "type": "laravel",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Tarek Adam",
-            "email": "tarek@fuqu.io"
-        }
-    ],
-    "minimum-stability": "dev",
-    "autoload": {
-        "psr-4": {
-            "FuquIo\\LaravelPackage\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "FuquIo\\Test\\": "tests/"
-        }
-    },
-    "require": {},
-    "require-dev": {
-        "graham-campbell/testbench": "^5.0@dev",
-        "phpunit/phpunit": "^7.1@dev",
-        "mockery/mockery": "^1.0@dev"
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "FuquIo\\LaravelPackage\\ServiceProvider"
-            ]
-        }
+  "name": "fuqu-io/laravel-package",
+  "description": "Laravel package boilerplate.",
+  "keywords": [
+    "laravel",
+    "package"
+  ],
+  "type": "laravel",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tarek Adam",
+      "email": "tarek@fuqu.io"
     }
+  ],
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "FuquIo\\LaravelPackage\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "FuquIo\\Test\\": "tests/"
+    }
+  },
+  "require": {},
+  "require-dev": {
+    "graham-campbell/testbench": "^5.0@dev",
+    "phpunit/phpunit": "^7.1@dev",
+    "mockery/mockery": "^1.0@dev"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "FuquIo\\LaravelPackage\\ServiceProvider"
+      ]
+    }
+  }
 }

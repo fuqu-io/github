@@ -1,6 +1,6 @@
 <?php
 
-namespace FuquIo\LaravelPackage;
+namespace FuquIo\LaravelGlide;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
@@ -9,8 +9,8 @@ use Illuminate\Support\ServiceProvider as BaseServiceProvider;
  * @package FuquIo\LaravelCors
  */
 class ServiceProvider extends BaseServiceProvider{
-	CONST VENDOR_PATH = 'fuqu-io/laravel-package';
-	CONST SHORT_NAME = 'fuqu-package';
+	CONST VENDOR_PATH = 'fuqu-io/laravel-glide';
+	CONST SHORT_NAME = 'fuqu-glide';
 
 	/**
 	 * Bootstrap the application services.
@@ -21,7 +21,6 @@ class ServiceProvider extends BaseServiceProvider{
 
 		$this->bootConfig();
 		$this->bootMigrations();
-		//$this->bootMiddleware();
 
 	}
 
@@ -39,7 +38,7 @@ class ServiceProvider extends BaseServiceProvider{
 	 * @internal
 	 */
 	private function bootConfig(){
-		$this->publishes([__DIR__ . '/../config/main.php' => config_path(SELF::SHORT_NAME . '.php')], 'config');
+		$this->publishes([__DIR__ . '/../config/main.php' => config_path(SELF::SHORT_NAME . '-client-site.php')], 'config');
 		$this->mergeConfigFrom(__DIR__ . '/../config/main.php', SELF::SHORT_NAME);
 	}
 
@@ -50,11 +49,4 @@ class ServiceProvider extends BaseServiceProvider{
 		$this->loadMigrationsFrom(__DIR__ . '/../migrations');
 	}
 
-	/**
-	 * @internal
-	 */
-	private function bootMiddleware(){
-		$kernel = $this->app->make(\Illuminate\Contracts\Http\Kernel::class);
-		$kernel->prependMiddleware(Middleware::class);
-	}
 }

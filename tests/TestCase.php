@@ -3,7 +3,7 @@
 namespace FuquIo\Test;
 
 use Orchestra\Testbench\TestCase as BaseCase;
-use FuquIo\LaravelGlide\ServiceProvider;
+use FuquIo\LaravelPackage\ServiceProvider;
 
 class TestCase extends BaseCase{
 	protected function setUp(){

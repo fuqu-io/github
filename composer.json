@@ -33,7 +33,8 @@
   "extra": {
     "laravel": {
       "providers": [
-        "FuquIo\\LaravelPackage\\ServiceProvider"
+        "FuquIo\\LaravelPackage\\ServiceProvider",
+        "FuquIo\\LaravelPackage\\EventServiceProvider"
       ]
     }
   }

@@ -1,6 +1,6 @@
 <?php
 
-namespace FuquPackage\Tests\Unit;
+namespace FuquGithub\Tests\Unit;
 
 use Tests\TestCase;
 

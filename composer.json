@@ -1,5 +1,5 @@
 {
-  "name": "fuqu-io/laravel-package",
+  "name": "fuqu-io/laravel-github",
   "description": "Laravel package boilerplate.",
   "keywords": [
     "laravel",
@@ -16,7 +16,7 @@
   "minimum-stability": "dev",
   "autoload": {
     "psr-4": {
-      "FuquIo\\LaravelPackage\\": "src/"
+      "FuquIo\\LaravelGithub\\": "src/"
     }
   },
   "autoload-dev": {
@@ -24,7 +24,9 @@
       "FuquIo\\Test\\": "tests/"
     }
   },
-  "require": {},
+  "require": {
+
+  },
   "require-dev": {
     "graham-campbell/testbench": "^5.0@dev",
     "phpunit/phpunit": "^7.1@dev",
@@ -33,8 +35,8 @@
   "extra": {
     "laravel": {
       "providers": [
-        "FuquIo\\LaravelPackage\\ServiceProvider",
-        "FuquIo\\LaravelPackage\\EventServiceProvider"
+        "FuquIo\\LaravelGithub\\ServiceProvider",
+        "FuquIo\\LaravelGithub\\EventServiceProvider"
       ]
     }
   }

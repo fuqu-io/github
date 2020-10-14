@@ -1,6 +1,6 @@
 <?php
 
-namespace FuquIo\LaravelPackage;
+namespace FuquIo\LaravelGithub;
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as BaseServiceProvider;
 

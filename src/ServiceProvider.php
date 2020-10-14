@@ -1,6 +1,6 @@
 <?php
 
-namespace FuquIo\LaravelPackage;
+namespace FuquIo\LaravelGithub;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
@@ -9,8 +9,8 @@ use Illuminate\Support\ServiceProvider as BaseServiceProvider;
  * @package FuquIo\LaravelCors
  */
 class ServiceProvider extends BaseServiceProvider{
-	CONST VENDOR_PATH = 'fuqu-io/laravel-package';
-	CONST SHORT_NAME = 'fuqu-package';
+	CONST VENDOR_PATH = 'fuqu-io/laravel-github';
+	CONST SHORT_NAME = 'fuqu-github';
 
 	/**
 	 * Bootstrap the application services.

@@ -4,7 +4,7 @@ namespace FuquIo\LaravelGithub;
 
 use GuzzleHttp\Client as Guzzle;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Log;
 use Psr\Http\Message\ResponseInterface;
 use TheBackOffice\BookingPal\Json\CrudInterface;
 use TheBackOffice\BookingPal\Orm\BookingPalId;
@@ -87,11 +87,14 @@ class Client{
             //$params = [RequestOptions::JSON => json_encode($params)];
         }
 
-        $result = $this->guzzle->$call($url, $params);
+        try{
+            $result = $this->guzzle->$call($url, $params);
+            //$this->setStatusAndContent($result, $route_info);
+        }catch(\Exception $exception){
+            Log::critical($exception);
+            throw $exception;
+        }
 
-        $this->setStatusAndContent($result, $route_info);
-
-        return $this;
     }
 
     /**

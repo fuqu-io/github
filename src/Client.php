@@ -4,6 +4,7 @@ namespace FuquIo\LaravelGithub;
 
 use GuzzleHttp\Client as Guzzle;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 use Psr\Http\Message\ResponseInterface;
 use TheBackOffice\BookingPal\Json\CrudInterface;
 use TheBackOffice\BookingPal\Orm\BookingPalId;
@@ -138,6 +139,17 @@ class Client{
                 throw new Exception('Could not read response.');
             }
 
+            switch(true){
+
+                case (!empty($route_info['target'])):
+
+                    break;
+
+                default:
+                    $this->record = $this->datum;
+                    break;
+            }
+
             $x = 5;
         }catch(\Exception $exception){
             $this->status = 205;
@@ -151,39 +163,5 @@ class Client{
      */
     public function getLastCall(){
         return $this->last_call;
-    }
-
-    public static function parseFields($booking_form_ui){
-        return collect($booking_form_ui)
-            ->recursive()
-            ->transform(function ($item, $key){
-                $ret = [
-                    'field' => $key,
-                    'type'  => $item['define']->get('layout')->get('type'),
-                    'label' => $item['define']->get('layout')->get('lbl'),
-                ];
-
-                if($item['define']->get('required')){
-                    $ret['rules'] = [[
-                                         'trigger' => 'blur',
-
-                                         'required' => true,
-                                         'message'  => 'required',
-                                     ]];
-                }
-
-                if($ret['type'] == 'radio' or $ret['type'] == 'filter_radio'){
-                    $ret['type'] = 'select';
-                }
-
-                if($ret['type'] == 'select'){
-                    $ret['options'] = $item['define']->get('layout')->get('options');
-                    if(!empty($ret['rules'])){
-                        $ret['rules'][0]['trigger'] = 'change';
-                    }
-                }
-
-                return $ret;
-            })->values();
     }
 }
